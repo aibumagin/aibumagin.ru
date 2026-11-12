@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Временная заглушка aibumagin.ru, пока выкладывается основной сайт. Без форм, cookie и счётчиков: данные не собираются. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>AI да Бумагин! – скоро здесь</title>
+<meta name="description" content="Сайт Андрея Бумагина про AI-агентов для работы собирается. Пока все новости – в Telegram-канале «AI да Бумагин!».">
+<meta property="og:title" content="AI да Бумагин! – сайт собирается">
+<meta property="og:description" content="Готовлю бесплатный мини-курс, курс «Claude Code не для программистов» и рабочие заготовки. Пока все новости – в Telegram-канале.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aibumagin.ru/">
+<meta name="theme-color" content="#0B0C0F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/Unbounded-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'Unbounded'; font-weight: 700; font-display: swap; src: url(fonts/Unbounded-700-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Unbounded'; font-weight: 700; font-display: swap; src: url(fonts/Unbounded-700-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF; }
+@font-face { font-family: 'Manrope'; font-weight: 500; font-display: swap; src: url(fonts/Manrope-500-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Manrope'; font-weight: 500; font-display: swap; src: url(fonts/Manrope-500-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF; }
+@font-face { font-family: 'Manrope'; font-weight: 800; font-display: swap; src: url(fonts/Manrope-800-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Manrope'; font-weight: 800; font-display: swap; src: url(fonts/Manrope-800-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF; }
+
+:root { --bg: #0B0C0F; --fg: #F3EFE8; --mut: #A6A9B3; --dim: #7B7F8A; --ln: rgba(255,255,255,.1); --acc: #FF6A2C; --acc2: #FF8A4F; --gut: clamp(16px, 4vw, 40px); }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; background: var(--bg); color: var(--fg);
+  font: 500 17px/1.6 'Manrope', -apple-system, 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body::before { content: ''; position: fixed; inset: -20vmax auto auto 55%; width: 70vmax; height: 70vmax; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(255,106,44,.22), rgba(255,106,44,0)); }
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; opacity: .055;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 4px; border-radius: 10px; }
+::selection { background: var(--acc); color: var(--bg); }
+
+.wrap { position: relative; z-index: 1; width: min(980px, 100% - var(--gut) * 2); margin-inline: auto; }
+header { padding-block: 28px; display: flex; align-items: center; gap: 12px; }
+header img { width: 36px; height: 36px; }
+.brand { font: 700 15px/1 'Unbounded', 'Manrope', sans-serif; letter-spacing: -.01em; text-decoration: none; }
+.brand span, .h1 span { color: var(--acc); }
+
+main { flex: 1; display: flex; align-items: center; padding-block: clamp(32px, 8vh, 96px); }
+.status { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border: 1px solid var(--ln); border-radius: 99px;
+  font-size: 14px; color: var(--mut); }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 0 rgba(255,106,44,.6); animation: pulse 2.2s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(255,106,44,0); } 100% { box-shadow: 0 0 0 0 rgba(255,106,44,0); } }
+.h1 { margin-top: 26px; font: 700 clamp(40px, 9.4vw, 104px)/.98 'Unbounded', 'Manrope', sans-serif; letter-spacing: -.035em; text-wrap: balance; overflow-wrap: anywhere; }
+.lead { margin-top: 28px; max-width: 34em; font-size: clamp(18px, 2.2vw, 22px); line-height: 1.5; text-wrap: pretty; }
+.lead b { font-weight: 800; }
+.note { margin-top: 14px; max-width: 34em; color: var(--mut); text-wrap: pretty; }
+
+.cta { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 28px; border-radius: 16px; background: var(--acc); color: #14100D;
+  font: 800 18px/1.1 'Manrope', sans-serif; text-decoration: none; transition: background .2s, transform .2s; }
+.btn:hover { background: var(--acc2); transform: translateY(-2px); }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.handle { color: var(--mut); font-size: 15px; text-decoration: none; border-bottom: 1px solid var(--ln); }
+.handle:hover { color: var(--fg); }
+
+.planet { margin-top: 56px; max-width: 34em; padding-top: 24px; border-top: 1px solid var(--ln); color: var(--mut); font-size: 15px; }
+.planet a { color: var(--fg); }
+
+footer { position: relative; z-index: 1; padding-block: 28px; color: var(--dim); font-size: 13px; }
+
+@media (max-width: 520px) {
+  .btn { width: 100%; justify-content: center; }
+  .cta { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { .status i { animation: none; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <img src="favicon.svg" alt="" width="36" height="36">
+  <a class="brand" href="https://t.me/aibumagin">AI да Бумагин<span>!</span></a>
+</header>
+
+<main class="wrap">
+  <div>
+    <p class="status"><i aria-hidden="true"></i>Сайт собирается</p>
+    <h1 class="h1">Скоро здесь будет много полезного<span>!</span></h1>
+    <p class="lead">Готовлю бесплатный мини-курс, курс <b>«Claude Code не для программистов»</b> и набор заготовок: правила, скиллы и агентов, которые каждый день работают у меня.</p>
+    <p class="note">Пока сайт собирается, все новости – в Telegram-канале: что уже готово и когда откроется мини-курс.</p>
+    <div class="cta">
+      <a class="btn" href="https://t.me/aibumagin" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.1 2.9 11.2c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM8.9 14l9.3-5.9c.5-.3.8-.1.5.2l-7.7 7-.3 3.3L8.9 14Z"/></svg>
+        Читать канал в Telegram
+      </a>
+      <a class="handle" href="https://t.me/aibumagin" rel="noopener">@aibumagin</a>
+    </div>
+    <p class="planet">А пока можно заглянуть на <a href="https://planeta.aibumagin.ru/">«Пустую планету»</a> – игру, где каждый день происходит то, что выбрали в комментариях.</p>
+  </div>
+</main>
+
+<footer class="wrap">Андрей Бумагин · AI да Бумагин! · 2026</footer>
+</body>
+</html>
